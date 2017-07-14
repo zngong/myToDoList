@@ -1,0 +1,17 @@
+.navTitle{
+  width: 15%;
+  background-color: #bfdaec;
+  float:left
+}
+.navTitle a{
+  display: block;
+  border-bottom: 1px solid #3c3939;
+  text-align: center;
+  height: 30px;
+  padding-top: 5px;
+  text-decoration: none;
+}
+.selectedNav{
+  background-color: #4ca7e4;;
+}
+

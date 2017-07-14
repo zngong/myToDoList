@@ -1,0 +1,15 @@
+<div class="single_task" *ngFor="let task of taskList">
+  <h3>{{task.title}}</h3>
+  <div class="task_content">
+    <div class="task_content_area">{{task.content}}</div>
+    <span class="creat_time">{{task.createTime | date: 'yyyy-MM-dd'}}</span>
+  </div>
+  <div class="operate_task">
+    <span *ngIf="task.isComplete !== 2" class="edit_task" (click)="doEdit(task)">编辑-</span>
+    <span class="edit_task" (click)="viewDetail(task)">查看-</span>
+    <span class="delete_task" (click)="deleTask(task)">删除</span>
+  </div>
+</div>
+<div *ngIf="taskList && taskList.length == 0">
+  <img src="/assets/noFind.png" alt="">
+</div>

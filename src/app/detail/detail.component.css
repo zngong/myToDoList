@@ -1,0 +1,26 @@
+.detail_content{
+  margin-top: 10px;
+  display: block;
+}
+.detail_title{
+  display: block;
+  width: 200px;
+  height: 29px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.task_detail{
+  margin: 20px;
+}
+.task_type input,.task_operate_button{
+  margin-top: 20px;
+}
+.task_detail_type{
+  margin-top: 10px;
+}
+.creat_task{
+  background-color: #91c9ef;
+}
+.task_operate_button button{
+  margin-right: 20px;
+}
