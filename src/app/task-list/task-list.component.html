@@ -5,7 +5,7 @@
     <span class="creat_time">{{task.createTime | date: 'yyyy-MM-dd'}}</span>
   </div>
   <div class="operate_task">
-    <span *ngIf="task.isComplete !== 2" class="edit_task" (click)="doEdit(task)">编辑-</span>
+    <span *ngIf="task.isComplete*1 !== 2" class="edit_task" (click)="doEdit(task)">编辑-</span>
     <span class="edit_task" (click)="viewDetail(task)">查看-</span>
     <span class="delete_task" (click)="deleTask(task)">删除</span>
   </div>

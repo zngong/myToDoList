@@ -5,8 +5,8 @@
   </textarea>
   <div class="task_type">
     <label>任务类型：</label>
-    <label><input name="task_type" type="radio" value="1" name="isComplete"(click)="task.isComplete = 1" [checked]="task.isComplete === 1" />将来任务 </label>
-    <label><input name="task_type" type="radio" value="2" name="isComplete"(click)="task.isComplete = 2" [checked]="task.isComplete === 2"/>已完成任务 </label>
+    <label><input name="task_type" type="radio" value="1" name="isComplete"(click)="task.isComplete = 1" [checked]="task.isComplete*1 === 1" />将来任务 </label>
+    <label><input name="task_type" type="radio" value="2" name="isComplete"(click)="task.isComplete = 2" [checked]="task.isComplete*1 === 2"/>已完成任务 </label>
   </div>
   <div class="task_operate_button">
     <button pButton type="button" (click)="goBack()" label="<返回"></button>

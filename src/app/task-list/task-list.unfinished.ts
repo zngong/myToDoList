@@ -17,7 +17,6 @@ export class TaskListUnfinished implements OnInit {
   ngOnInit() {
     this.taskService.getTaskList().then(tasks=>{
       this.taskList = tasks.filter(task=>task.isComplete != 2)
-      console.log("=====type=====",this.taskList)
     })
   }
   viewDetail(task:Tasks):void{

@@ -1,13 +1,13 @@
 <div class="task_detail">
-  <form [formGroup]="tasks"  (ngSubmit)="onSubmit()" role="form" novalidate>
+  <form [formGroup]="tasks"  (ngSubmit)="onSubmit()" role="form" validate>
       <label>任务主题：</label><input class="detail_title" type="text" formControlName="title"   placeholder="请输入任务主题">
       <label>任务描述：</label><textarea class="detail_content"  rows="5" cols="40" formControlName="content" placeholder="请对任务进行描述">
 
       </textarea>
       <div class="task_type">
         <label>任务类型：</label>
-        <label><input name="task_type" type="radio" value="1" name="isComplete" [checked]="task.isComplete === 1" formControlName="isComplete"  (click)="task.isComplete = 1"/>将来任务 </label>
-        <label><input name="task_type" type="radio" value="2" name="isComplete" [checked]="task.isComplete !== 1" formControlName="isComplete"  (click)="task.isComplete = 2"/>已完成任务 </label>
+        <label><input name="task_type" type="radio" value="1" name="isComplete" [checked]="taskInfo.isComplete !== 2" formControlName="isComplete"/>将来任务 </label>
+        <label><input name="task_type" type="radio" value="2" name="isComplete" [checked]="taskInfo.isComplete === 2" formControlName="isComplete"/>已完成任务 </label>
       </div>
       <div class="task_operate_button">
         <button pButton type="button" type="submit" label="创建任务"></button>

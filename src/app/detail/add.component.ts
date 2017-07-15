@@ -20,8 +20,8 @@ export class AddComponent implements OnInit {
               private taskService:TaskService,private fb:FormBuilder,private router:Router) { }
   public tasks: FormGroup;
   public taskInfo: Tasks = new Tasks();
-  public nowDate:string;
   ngOnInit():void {
+    this.taskInfo.isComplete = 1;
     this.tasks = this.fb.group({
       "title": [
         this.taskInfo.title,
@@ -43,7 +43,7 @@ export class AddComponent implements OnInit {
         this.taskInfo.isComplete,
         [
           Validators.required,
-          Validators.minLength(2),
+          Validators.minLength(0),
           Validators.maxLength(64)
         ]
       ],

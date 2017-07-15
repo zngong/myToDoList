@@ -15,10 +15,11 @@ export class DetailComponent implements OnInit {
               private taskService:TaskService,private location:Location,private router:Router) { }
   ngOnInit():void {
     this.route.params.switchMap((params: Params) => this.taskService.getTaskDetail(+params['id']))
-      .subscribe(task => this.task = task);
-  }
-  doSave(task:Tasks):void{
-    this.taskService.updateTask(task).then(res=>this.router.navigate(['/unfinished']))
+      .subscribe(task => {
+        this.task = task
+        console.log(this.task)
+      });
+
   }
   goBack(): void {
     this.location.back();

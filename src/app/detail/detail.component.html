@@ -4,9 +4,9 @@
 
   </textarea>
   <div class="task_detail_type">
-    <label>任务类型：</label>
-    <span *ngIf="task.isComplete == 1" style="color: red">未完成任务</span>
-    <span *ngIf="task.isComplete == 2">已完成任务</span>
+    <label>任务状态：</label>
+    <span *ngIf="task.isComplete*1 === 1" style="color: red">未完成任务</span>
+    <span *ngIf="task.isComplete*1 === 2">已完成任务</span>
   </div>
   <div class="task_operate_button">
     <button pButton type="button" (click)="goBack()" label="<返回"></button>
