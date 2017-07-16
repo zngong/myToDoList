@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../app.task.service';
 import { Tasks } from '../app.taskType';
-import {Router} from '@angular/router'
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-task-list',

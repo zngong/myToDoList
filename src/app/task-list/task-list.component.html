@@ -5,11 +5,13 @@
     <span class="creat_time">{{task.createTime | date: 'yyyy-MM-dd'}}</span>
   </div>
   <div class="operate_task">
-    <span *ngIf="task.isComplete*1 !== 2" class="edit_task" (click)="doEdit(task)">编辑-</span>
-    <span class="edit_task" (click)="viewDetail(task)">查看-</span>
-    <span class="delete_task" (click)="deleTask(task)">删除</span>
+    <button class="ui-button-success" pButton *ngIf="task.isComplete*1 !== 2" class="edit_task" (click)="doEdit(task)" label="编辑"></button>
+    <button class="edit_task ui-button-info"  pButton (click)=" viewDetail(task)" label="查看"></button>
+    <button class="ui-button-error delete_task"  pButton (click)="deleTask(task)" label="删除" ></button>
   </div>
 </div>
+<!--<p-growl [(value)]="msgs"gt;</p-growl>-->
 <div *ngIf="taskList && taskList.length == 0">
   <img src="/assets/noFind.png" alt="">
 </div>
+<app-dialog [tipDialog_config]="tipDialog"></app-dialog>

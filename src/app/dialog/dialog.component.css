@@ -1,0 +1,31 @@
+.tip_dialog{
+  width: 270px;
+  border: 2px solid #decbcb;
+}
+.tip_dialog .title{
+  text-align: center;
+  height: 25px;
+  background-color: #2399E5;
+}
+.tip_dialog .title .close_dialog{
+  float: right;
+  margin-right: 4px;
+  font-size: 1px;
+}
+.tip_dialog .content{
+  height: 70px;
+  text-align: center;
+  border-bottom: 2px solid #c3afaf;
+  border-top: 2px solid #c3afaf;
+  background-color: #efeeee;
+}
+.tip_dialog .dialog_button{
+  font-size: 10px;
+  height: 35px;
+  text-align: center;
+  background-color: #ebe3e3;
+  padding-top: 7px;
+}
+.tip_dialog .dialog_button .dialog_save{
+  margin-right: 25px;
+}

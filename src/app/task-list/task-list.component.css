@@ -31,9 +31,16 @@
   right: 0;
 }
 .operate_task{
-  margin-top: 20px;
+  margin-top: 13px;
 }
-.operate_task .delete_task, .edit_task{
-  cursor:pointer;
+.operate_task button{
+  font-size: 10px;
+  margin-right: 10px;
+}
+.operate_task .delete_task{
+  background-color: #d9534f;
+  border-color: #d9534f;
+  color: #fff;
+
 }
 

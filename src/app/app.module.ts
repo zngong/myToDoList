@@ -18,6 +18,7 @@ import { Tasks } from './app.taskType';
 /*primeng*/
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputTextModule, ButtonModule } from 'primeng/primeng';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InputTextModule, ButtonModule } from 'primeng/primeng';
     TaskListUnfinished,
     DetailComponent,
     EditComponent,
-    AddComponent
+    AddComponent,
+    DialogComponent
   ],
   imports: [
     FormsModule,
