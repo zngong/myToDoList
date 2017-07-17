@@ -24,3 +24,10 @@
 .task_operate_button button{
   margin-right: 20px;
 }
+.alert-danger{
+  height: 23px;
+  background-color: red;
+  width: 20%;
+  padding: 7px;
+  color: #fff;
+}
