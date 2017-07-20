@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms';
 import { HttpModule ,JsonpModule} from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputTextModule, ButtonModule } from 'primeng/primeng';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -12,13 +15,10 @@ import { EditComponent } from './detail/edit.component';
 import { AddComponent } from './detail/add.component';
 import { AppRoutingModule }     from './app-routing.module';
 import { TaskService }     from './app.task.service';
-import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
 import { AppDataService } from './app.data.service'
 import { Tasks } from './app.taskType';
-/*primeng*/
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InputTextModule, ButtonModule } from 'primeng/primeng';
 import { DialogComponent } from './dialog/dialog.component';
+import { PopupModule } from 'ng2-opd-popup';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { DialogComponent } from './dialog/dialog.component';
     DetailComponent,
     EditComponent,
     AddComponent,
-    DialogComponent
+    DialogComponent,
   ],
   imports: [
     FormsModule,
@@ -41,7 +41,8 @@ import { DialogComponent } from './dialog/dialog.component';
     InMemoryWebApiModule.forRoot(AppDataService),
     BrowserAnimationsModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    PopupModule.forRoot(),
   ],
   providers: [TaskService, Tasks],
   bootstrap: [AppComponent]

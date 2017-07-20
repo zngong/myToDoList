@@ -1,15 +1,24 @@
 <div class="task_detail">
-  <label>任务主题：</label><input class="detail_title" type="text" [(ngModel)]="task.title"   placeholder="请输入任务主题">
-  <label>任务描述：</label><textarea class="detail_content"  rows="5" cols="40" [(ngModel)]="task.content"  placeholder="请对任务进行描述">
-
-  </textarea>
-  <div class="task_type">
-    <label>任务类型：</label>
-    <label><input name="task_type" type="radio" value="1" name="isComplete"(click)="task.isComplete = 1" [checked]="task.isComplete*1 === 1" />将来任务 </label>
-    <label><input name="task_type" type="radio" value="2" name="isComplete"(click)="task.isComplete = 2" [checked]="task.isComplete*1 === 2"/>已完成任务 </label>
-  </div>
-  <div class="task_operate_button">
-    <button pButton type="button" (click)="goBack()" label="<返回"></button>
-    <button pButton type="button" (click)="doSave(task)" label="保存"></button>
-  </div>
+  <form [formGroup]="tasksForm"  (ngSubmit)="onSubmit(task)" role="form" novalidate>
+    <label>任务主题：</label><input class="detail_title" type="text" [(ngModel)]="task.title"
+                               formControlName="title"   placeholder="请输入任务主题">
+    <div *ngIf="formErrors.title" class="alert alert-danger">
+      {{ formErrors.title }}
+    </div>
+    <label>任务描述：</label><textarea class="detail_content"  rows="5" cols="40"
+                    [(ngModel)]="task.content" formControlName="content"  placeholder="请对任务进行描述">
+     </textarea>
+    <div *ngIf="formErrors.content" class="alert alert-danger">
+      {{ formErrors.content }}
+    </div>
+    <div class="task_type">
+      <label>任务类型：</label>
+      <label><input name="task_type" type="radio" value="1" name="isComplete"(click)="task.isComplete = 1" [checked]="task.isComplete*1 === 1" formControlName="isComplete" />将来任务 </label>
+      <label><input name="task_type" type="radio" value="2" name="isComplete"(click)="task.isComplete = 2" [checked]="task.isComplete*1 === 2" formControlName="isComplete"/>已完成任务 </label>
+    </div>
+    <div class="task_operate_button">
+      <button pButton type="button" (click)="goBack()" label="<返回"></button>
+      <button pButton type="submit" label="保存"></button>
+    </div>
+  </form>
 </div>
