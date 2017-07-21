@@ -18,14 +18,38 @@ export class DialogComponent{
   @ViewChild('popup5') popup5: Popup;
   ngOnInit() {
   }
-
+  /*Popup拥有的属性和方法*/
+  /*confirmBtnStyle
+  cancelBtnStyle
+  mainClass
+  confirmClick
+  cancelClick
+  options
+  onResize
+  ngOnInit
+  show
+  setOptions
+  hide
+  confirmNo
+  confirmYes
+  setWidth*/
 
   showPopup1(){
     this.popup1.options = {
       cancleBtnClass: "btn btn-default",
       confirmBtnClass: "btn btn-default",
       color: "#4180ab",
-      header: "Single Popup on a page"}
+      header: "Single Popup on a page",
+      widthProsentage:20,
+      confirmBtnContent:'确定',
+      cancleBtnContent:'取消'
+    }
+    // this.popup1['mainStyle']['margin-left'] = '10%'
+
+    console.log('=======popup======',this.popup1)
+    // for(var i in this.popup1){
+    //   console.log('=======popup======',i)
+    // }
     this.popup1.show(this.popup1.options);
   }
 

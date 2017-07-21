@@ -9,9 +9,12 @@
     <button class="edit_task ui-button-info"  pButton (click)=" viewDetail(task)" label="查看"></button>
     <button class="ui-button-error delete_task"  pButton (click)="deleTask(task)" label="删除" ></button>
   </div>
+  <popup #popup1 (confirmClick)="confirm(task)" (cancelClick)="doCancel()">
+    确定删除该任务？
+    <br>
+  </popup>
 </div>
 <!--<p-growl [(value)]="msgs"gt;</p-growl>-->
 <div *ngIf="taskList && taskList.length == 0">
   <img src="/assets/noFind.png" alt="">
 </div>
-<!--<app-dialog [tipDialog_config]="tipDialog"></app-dialog>-->
