@@ -16,6 +16,7 @@ import {Popup} from 'ng2-opd-popup';
 })
 export class TaskListUnfinished implements OnInit {
   taskList:Tasks[];
+  currentTask:Tasks;
   @ViewChild('popup1') popup1: Popup;
   constructor(private taskService:TaskService,private router:Router,private confirmationService:ConfirmationService) { }
 
@@ -31,6 +32,7 @@ export class TaskListUnfinished implements OnInit {
     this.router.navigate(['/edit', task.id]);
   }
   deleTask(task:Tasks):void{
+    this.currentTask = task;
     this.showPopup();
 
   }
@@ -46,7 +48,8 @@ export class TaskListUnfinished implements OnInit {
     }
     this.popup1.show(this.popup1.options);
   }
-  confirm(task){
+  confirm(){
+    var task = this.currentTask
     this.taskService.deleteTask(task.id).then(()=>{
       this.taskList = this.taskList.filter(tasks=>tasks !== task)
     })
