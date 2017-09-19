@@ -1,0 +1,29 @@
+<div  class="myGrid" style="width: 80%;">
+  <div>
+    <div style="padding-bottom: 4px;">
+      Column Visible:
+      <button (click)="showName(true)">Show Name</button>
+      <button (click)="showName(false)">Hide Name</button>
+      <button (click)="showAge(true)">Show All Age</button>
+      <button (click)="showAge(false)">Hide All Age</button>
+    </div>
+    <div style="padding-bottom: 4px;">
+      Column Pinned:
+      <button (click)="pinName(true)">Pin Name</button>
+      <button (click)="pinName(false)">Unpin Name</button>
+      <button (click)="pinSex(true)">Pin Sex</button>
+      <button (click)="pinSex(false)">Unpin Sex</button>
+    </div>
+  </div>
+  <ag-grid-angular #agGrid style="width: 100%; height: 500px;" class="ag-fresh"
+                   [gridOptions]="gridOptions"
+                   [columnDefs]="columnDefs"
+                   [showToolPanel]="showToolPanel"
+                   [rowData]="rowData"
+                    enableColResize
+                    enableSorting
+                    enableFilter
+                    rowHeight="22"
+                    rowSelection="multiple">
+  </ag-grid-angular>
+</div>
